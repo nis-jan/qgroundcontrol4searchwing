@@ -573,6 +573,8 @@ DebugBuild { PX4FirmwarePlugin { PX4FirmwarePluginFactory { APMFirmwarePlugin { 
 # Main QGC Headers and Source files
 
 HEADERS += \
+    src/RESTapi/httplib.h \
+    src/RESTapi/RESTapi.h \
     src/ADSB/ADSBVehicle.h \
     src/ADSB/ADSBVehicleManager.h \
     src/AnalyzeView/LogDownloadController.h \
@@ -838,6 +840,7 @@ AndroidBuild {
 }
 
 SOURCES += \
+    src/RESTapi/RESTapi.cc \
     src/ADSB/ADSBVehicle.cc \
     src/ADSB/ADSBVehicleManager.cc \
     src/AnalyzeView/LogDownloadController.cc \
@@ -1026,6 +1029,8 @@ SOURCES += \
     src/uas/UASMessageHandler.cc \
     src/AnalyzeView/GeoTagController.cc \
     src/AnalyzeView/ExifParser.cc \
+
+
 
 contains (DEFINES, QGC_ENABLE_PAIRING) {
     SOURCES += \

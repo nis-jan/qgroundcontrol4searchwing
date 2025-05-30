@@ -24,6 +24,7 @@ import QGroundControl.FactControls      1.0
 import QGroundControl.Palette           1.0
 import QGroundControl.Controllers       1.0
 import QGroundControl.ShapeFileHelper   1.0
+import REST 1.0
 
 Item {
     id: _root
@@ -595,7 +596,19 @@ Item {
                         enabled:            true
                         visible:            true
                         dropPanelComponent: centerMapDropPanel
+                    },
+                    // SEARCHWING specific:
+                    ToolStripAction{
+                        text:               "Land"
+                        iconSource:         API_bridge.landButtonIcon
+                        enabled:            true
+                        visible:             true
+                        onTriggered: {
+                            console.log("Land button gedrückt!");
+                            API_bridge.landButtonPressed();
+                        }
                     }
+
                 ]
             }
 
@@ -774,6 +787,15 @@ Item {
             terrainButtonVisible:   _editingLayer === _layerMission
             terrainButtonChecked:   terrainStatus.visible
             onTerrainButtonClicked: terrainStatus.toggleVisible()
+        }
+    }
+    //SEARCHWING specific:
+    Connections{
+        target: API_bridge
+        function onNewMissionPlan() {
+            console.log("new Mission plan: ");
+            console.log(API_bridge.currentFilePath);
+            _planMasterController.loadFromFile(API_bridge.currentFilePath);
         }
     }
 

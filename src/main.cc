@@ -24,6 +24,13 @@
 #include "QGCApplication.h"
 #include "AppMessages.h"
 
+#include "RESTapi/RESTapi.h"
+
+#define API_PORT 4444
+
+
+
+
 #ifndef NO_SERIAL_LINK
     #include "SerialLink.h"
 #endif
@@ -389,6 +396,7 @@ int main(int argc, char *argv[])
     qRegisterMetaType<QList<QPair<QByteArray,QByteArray> > >();
 
     app->_initCommon();
+
     //-- Initialize Cache System
     getQGCMapEngine()->init();
 

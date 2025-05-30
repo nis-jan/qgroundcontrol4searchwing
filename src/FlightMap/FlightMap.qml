@@ -22,6 +22,11 @@ import QGroundControl.MultiVehicleManager   1.0
 import QGroundControl.Vehicle               1.0
 import QGroundControl.QGCPositionManager    1.0
 
+import REST 1.0
+
+
+
+
 Map {
     id: _map
 
@@ -77,6 +82,7 @@ Map {
             onCoordinateChanged:    center = coordinate
         }
     }
+
 
     // Center map to gcs location
     onGcsPositionChanged: {
@@ -142,4 +148,206 @@ Map {
             }
         }
     }
+
+    //Code from here is searchwing specific
+    //unfortunately I couldn't make it work to dynamically add Markers to the model, they always wouldnt be displayed if not added at compiletime to the model.
+    ListModel {
+        id: markerModel
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+        ListElement {lat: -35.3618271; lon:149.1675706; visible: false}
+    }
+
+    Repeater {
+        model: markerModel
+
+        delegate: MapQuickItem {
+            property bool hovered: false
+            coordinate: QtPositioning.coordinate(model.lat, model.lon)
+            anchorPoint.x: 10
+            anchorPoint.y: 10
+            visible: model.visible
+            z: 1000
+            sourceItem: Image {
+                height: 30
+                width: 30
+                visible: true
+                Dialog {
+                    id: infoDialog
+                    title: "Boot"
+                    visible: false
+                    standardButtons: StandardButton.Ok
+
+                    onAccepted: {
+                        infoDialog.visible = false
+                        console.log("Dialog wurde akzeptiert");
+                    }
+
+                    contentItem: Column {
+                        spacing: 10
+                        Text { text: "Boot bei lat=" + model.lat + " lon=" + model.lon}
+                    }
+                }
+                // Tooltip-Text
+                Rectangle {
+                    visible: hovered
+                    color: "#333333"        // Hintergrundfarbe
+                    anchors.top: parent.top
+                    radius: 4
+                    anchors.left: parent.right
+                    anchors.margins: 4
+                    Text {
+                        id: text
+                        text: "Boot bei:\nlat: " + model.lat + "\nlon: " + model.lon
+                        color: "white"
+                        anchors.margins: 6
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.horizontalCenter: parent.horizontalCenter
+                    }
+                    width: text.implicitWidth+24
+                    height: text.implicitHeight+24
+                    z: 100
+                }
+
+                Image {
+                    id: icon
+                    source: "/res/firmware/distress_boat.svg"
+                    anchors.fill: parent
+                }
+
+                MouseArea {
+                    anchors.fill: parent
+                    hoverEnabled: true
+
+                    // for the tooltip text (on hover):
+                    onEntered: hovered = true
+                    onExited: hovered = false
+
+                    onClicked: {
+                        infoDialog.visible = true;
+                    }
+                }
+            }
+        }
+    }
+
+    //TODO: newMarkers signal machen, wo eine Liste übergeben wird und jedes mal alle Marker neu gesetzt werden.
+    Connections {
+        target: API_bridge
+        onNewMarkers: (coordList) => {
+                         console.log("new Markers:");
+                         // alle Marker erstmal deaktivieren, die vorher gezeigt wurden:
+                         for (var i = 0; i < 100; i++){
+                             if (markerModel.get(i).visible == true){
+                                 markerModel.setProperty(i, "visible", false);
+                             }
+                             else break;
+                         }
+                        // jetzt entsprechend die Marker setzen:
+                         for (var i = 0; i < coordList.length && i < 100; i++){
+                             markerModel.setProperty(Math.floor(i/2.0), i%2 == 0?"lat":"lon", coordList[i]);
+                             markerModel.setProperty(Math.floor(i/2.0), "visible", true);
+
+                         }
+        }
+    }
+
 } // Map
