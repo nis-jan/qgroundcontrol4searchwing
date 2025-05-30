@@ -35,6 +35,7 @@
 
 #include "QGC.h"
 #include "QGCApplication.h"
+#include "RESTapi/RESTapi.h"
 #include "CmdLineOptParser.h"
 #include "UDPLink.h"
 #include "LinkManager.h"
@@ -106,6 +107,7 @@
 #include "CustomAction.h"
 #include "CustomActionManager.h"
 #include "GimbalController.h"
+
 
 #if defined(QGC_ENABLE_PAIRING)
 #include "PairingManager.h"
@@ -540,6 +542,16 @@ void QGCApplication::_initCommon()
     qmlRegisterSingletonType<ScreenToolsController>     ("QGroundControl.ScreenToolsController",    1, 0, "ScreenToolsController",  screenToolsControllerSingletonFactory);
     qmlRegisterSingletonType<ShapeFileHelper>           ("QGroundControl.ShapeFileHelper",          1, 0, "ShapeFileHelper",        shapeFileHelperSingletonFactory);
     qmlRegisterSingletonType<ShapeFileHelper>           ("MAVLink",                                 1, 0, "MAVLink",                mavlinkSingletonFactory);
+
+    // SEARCHWING API OBJECT QML bekannt machen.
+    qmlRegisterSingletonType<RESTapi>("REST", 1, 0, "API_bridge",
+                                      [](QQmlEngine* engine, QJSEngine* scriptEngine) -> QObject* {
+                                          Q_UNUSED(engine)
+                                          Q_UNUSED(scriptEngine)
+                                          RESTapi * ra = new RESTapi();
+                                          ra->run();
+                                          return ra;  // wird genau einmal erzeugt
+                                      });
 
     // Although this should really be in _initForNormalAppBoot putting it here allowws us to create unit tests which pop up more easily
     if(QFontDatabase::addApplicationFont(":/fonts/opensans") < 0) {

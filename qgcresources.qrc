@@ -18,7 +18,7 @@
         <file alias="counter-clockwise-arrow.svg">resources/counter-clockwise-arrow.svg</file>
         <file alias="chevron-down.svg">resources/chevron-down.svg</file>
         <file alias="chevron-up.svg">resources/chevron-up.svg</file>
-		<file alias="DropArrow.svg">resources/DropArrow.svg</file>
+        <file alias="DropArrow.svg">resources/DropArrow.svg</file>
         <file alias="gear-black.svg">resources/gear-black.svg</file>
         <file alias="gear-white.svg">resources/gear-white.svg</file>
         <file alias="helicoptericon.svg">resources/helicoptericon.svg</file>
@@ -37,8 +37,8 @@
         <file alias="pencil.svg">resources/pencil.svg</file>
         <file alias="Play">resources/Play.svg</file>
         <file alias="PowerButton">resources/PowerButton.svg</file>
-        <file alias="QGCLogoBlack">resources/QGCLogoBlack.svg</file>
-		<file alias="QGCLogoFull">resources/QGCLogoFull.svg</file>
+        <file alias="QGCLogoBlackold">resources/QGCLogoBlack.svg</file>
+        <file alias="QGCLogoFullold">resources/QGCLogoFull.svg</file>
         <file alias="QGCLogoWhite">resources/QGCLogoWhite.svg</file>
         <file alias="QGCLogoArrow">resources/QGCLogoArrow.svg</file>
         <file alias="QGroundControlConnect">resources/QGroundControlConnect.svg</file>
@@ -59,11 +59,16 @@
         <file alias="GripperRelease.svg">resources/GripperRelease.svg</file>
         <file alias="GripperGrab.svg">resources/GripperGrab.svg</file>
         <file>resources/icons/qgroundcontrol.ico</file>
+        <file alias="QGCLogoFull">resources/patch-searchwing-roboto-no-boat.svg</file>
+        <file alias="QGCLogoBlack">resources/patch-searchwing-roboto-no-boat.png</file>
+        <file>resources/searchwing.ico</file>
+        <file alias="wait_clock.svg">resources/wait_clock.svg</file>
     </qresource>
     <qresource prefix="/res/firmware">
         <file alias="3drradio.png">resources/firmware/3drradio.png</file>
         <file alias="apm.png">resources/firmware/apm.png</file>
         <file alias="px4.png">resources/firmware/px4.png</file>
+        <file alias="distress_boat.svg">resources/distress_boat.svg</file>
     </qresource>
     <qresource prefix="/res/calibration">
         <file alias="accel_back.png">resources/calibration/accel_back.png</file>
